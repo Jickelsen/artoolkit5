@@ -42,6 +42,8 @@
 #include <KPM/surfSub.h>
 #endif
 
+#define DB_IMAGE_MAX 1024 // max number of images across all pages, adjust as necessary
+
 #if !BINARY_FEATURE
 typedef struct {
     SurfSubSkipRegion    *region;
@@ -89,6 +91,7 @@ struct _KpmHandle {
     
     KpmResult                *result;
     int                       resultNum;
+    int                       pageIDs[DB_IMAGE_MAX];
 };
 
 #endif // !__kpmPrivate_h__
